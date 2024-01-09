@@ -1,6 +1,6 @@
 #include "gf.h"
 #include <iostream>
-
+#include <vector>
 
 using namespace std;
 
@@ -59,10 +59,32 @@ class GF_N
 			return (d & mask);
 		}
 
+		//return the remainder when two polys are divided not in field
+		unsigned int rem(unsigned int a, unsigned int b){
+			if(b == 0){
+				std::cerr << "cannot divide by 0" << std::ends;
+				return 0;
+			}
+			else if(a == 0) return 0;
+			unsigned int result = a;
+			unsigned int pos = 0;
+			while(degree(result) >= degree(b)){
+				pos = degree(result) - degree(b);
+				result ^= b << pos;
+			}
+			return result;	
+		}
+
 		//find the inverse of this polynomial using EEA
-		//TODO: implement
-		unsigned int inverse(unsigned int a){
-			return 0;
+		std::vector<unsigned int> extended_euclid_rec(unsigned int a,
+				unsigned int b){
+			unsigned int d, x, y;
+			std::vector<unsigned int> result = {0, 0, 0};
+			if(b == 0){
+				result = {a, 1, 0};
+				return result;
+			}
+			return result;
 		}
 	
 };
