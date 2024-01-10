@@ -1,4 +1,4 @@
-# Install script for directory: /home/kdecara/cryptography/aes/galois
+# Install script for directory: /home/kdecara/cryptography/rsa
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kdecara/cryptography/aes/galois/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kdecara/cryptography/rsa/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
